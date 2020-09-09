@@ -1,0 +1,22 @@
+{
+
+    "devFirstName" : "Mehul",
+    "devLastName" : "Desai",
+    "devEmail" : "desaimehul94@gmail.com",
+    "devPhone" : "+1 (437) 779 4515",
+    "street1": "1 Fountainhead Road",
+    "street2" : "North York",
+    "city" : "Toronto",
+    "province": "ON",
+    "country": "CA",
+    "postalcode": "M3j 1K6",
+
+
+    "instaLink" : "https://www.instagram.com/",
+    "instaUserName" : "mmdesai94",
+    "instaQuery" : "?__a=1",
+    "facebookLink": "https://www.facebook.com/mmdesai94",
+    "twitterLink" :"https://twitter.com/desaimehul94",
+    "linkedInLink" : "https://www.linkedin.com/in/mehuldesai94/",
+    "githubLink" : "https://github.com/mehuldesai94"
+} 
