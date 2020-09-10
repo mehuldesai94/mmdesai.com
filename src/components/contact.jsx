@@ -5,12 +5,6 @@ import CustomizedSnackbars from './errorMessage';
 // https://blog.mailtrap.io/react-contact-form/
 // https://material-ui.com/components/snackbars/
 
-const validateFormDetails = data => {
-    console.log(data);
-    if (data.name === ""){
-        return <CustomizedSnackbars/>;
-    }
-}
 
 export default class Contact extends Component {
     constructor(props) {
@@ -28,7 +22,15 @@ export default class Contact extends Component {
             senderName: '',
             senderEmail: '',
             senderPhone: '',
-            senderMessage: ''
+            senderMessage: '',
+            badData: false
+        }
+    }
+
+    validateFormDetails = data => {
+        console.log("here", data);
+        if (data.name === ""){
+            this.setState({ badData: true });
         }
     }
 
@@ -40,7 +42,8 @@ export default class Contact extends Component {
             email: this.state.senderEmail,
             message: this.state.senderMessage
         }
-        validateFormDetails(senderData);
+
+        this.validateFormDetails(senderData);
     }
 
     onFormDataChange(event) {
@@ -143,7 +146,34 @@ export default class Contact extends Component {
                         </div>
                     </div>
                 </section>
+                {(this.state.badData) ? <CustomizedSnackbars /> : null}
             </div>
         );
     }
 }
+
+
+// function Alert(props) {
+//   return <MuiAlert elevation={6} variant="filled" {...props} />;
+// }
+
+// const CustomizedSnackbars = () => {
+//     const handleClose = (event, reason) => {
+//       console.log("clicked");
+//     if (reason === 'clickaway') {
+//       return;
+//     }
+//   };
+
+
+//   return (
+//     <div>
+//         <Snackbar open={true} autoHideDuration={500} onClose={handleClose}>
+//           <Alert onClose={handleClose} severity="success">
+//             This is a success message!
+//           </Alert>
+//         </Snackbar>
+//         {console.log('display')}
+//       </div>
+//   );
+// }

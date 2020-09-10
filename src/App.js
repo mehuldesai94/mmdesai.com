@@ -6,16 +6,20 @@ import Footer from './components/footer';
 import Contact from './components/contact';
 import About from './components/about';
 
-function App() {
-  return (
-    <div>
-      <Header />
-      <Home />
-      <About/>
-      <Contact/>
-      <Footer/>
-    </div>
-  );
-}
+class App extends React.Component {
+  state = {}
 
+  render() { 
+    return (
+       <>
+        <Header />
+        <Home />
+        <About/>
+        <Contact />
+        <Footer/>
+      </>
+    );
+  }
+}
+ 
 export default App;
