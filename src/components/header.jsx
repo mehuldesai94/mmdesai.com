@@ -4,7 +4,6 @@ export default class Header extends Component {
     render() {
         return (
             <div>
-
             <nav class="navbar navbar-expand-lg site-navbar navbar-light bg-light" id="pb-navbar">
 
                 <div class="container">

@@ -1,22 +1,71 @@
 {
-
-    "devFirstName" : "Mehul",
-    "devLastName" : "Desai",
-    "devEmail" : "desaimehul94@gmail.com",
-    "devPhone" : "+1 (437) 779 4515",
+    "devFirstName": "Mehul",
+    "devLastName": "Desai",
+    "devEmail": "desaimehul94@gmail.com",
+    "devPhone": "+1 (437) 779 4515",
     "street1": "1 Fountainhead Road",
-    "street2" : "North York",
-    "city" : "Toronto",
+    "street2": "North York",
+    "city": "Toronto",
     "province": "ON",
     "country": "CA",
     "postalcode": "M3j 1K6",
-
-
-    "instaLink" : "https://www.instagram.com/",
-    "instaUserName" : "mmdesai94",
-    "instaQuery" : "?__a=1",
+    "instaLink": "https://www.instagram.com/",
+    "instaUserName": "mmdesai94",
+    "instaQuery": "?__a=1",
     "facebookLink": "https://www.facebook.com/mmdesai94",
-    "twitterLink" :"https://twitter.com/desaimehul94",
-    "linkedInLink" : "https://www.linkedin.com/in/mehuldesai94/",
-    "githubLink" : "https://github.com/mehuldesai94"
-} 
+    "twitterLink": "https://twitter.com/desaimehul94",
+    "linkedInLink": "https://www.linkedin.com/in/mehuldesai94/",
+    "githubLink": "https://github.com/mehuldesai94",
+    "education": [
+        {
+            "key": 1,
+            "program": "Diploma in Computer Programmer",
+            "description": "This program prepares me with the skills and knowledge to begin my career as a programmer",
+            "college": "Seneca College",
+            "startDate": "Sep 2017",
+            "endDate": "Apr 2019"
+        },
+        {
+            "key": 2,
+            "program": "Bachelor in Information Technology Engineering",
+            "description": "IT is the most captivating sector of the modern world. Engineering with IT gives career in Programming, Software Project Development, Computer Networks, Information and Network Security, many other fields.",
+            "college": "Birla Vishwakarma Mahavidhyalaya",
+            "startDate": "Jul 2011",
+            "endDate": "Jun 2015"
+        }
+    ],
+    "experience": [
+        {
+            "key": 1,
+            "position": "Retail Sales Supervisor",
+            "description": "Works with sales associates and customers on a daily basis. Also, creating marketing campaigns and maintaining store profitabilit by detail-oriented and excellent problem-solving skills",
+            "startDate": "Jan 2018",
+            "endDate": "Present",
+            "company": "Circle K"
+        },
+        {
+            "key": 2,
+            "position": "Lab Assistant",
+            "description": "Deep technical knowledge, and hands on experience help me to solve students assignment problems and served them to achieve their objective.",
+            "startDate": "Jan 2019",
+            "endDate": "Apr 2019",
+            "company": "Seneca College"
+        },
+        {
+            "key": 3,
+            "position": "Board of Directors",
+            "description": "Non-profit organization that utilizes student’s fees to entertain, advocates student issue, and help them to explore globally.",
+            "startDate": "May 2018",
+            "endDate": "Apr 2019",
+            "company": "Seneca College"
+        },
+        {
+            "key": 4,
+            "position": "Sr. Software Developer",
+            "description": "Developed secure, reliable software functionalities and deploy in projects. Also, good communication, ollaborative approach and nicely deal with deadlines lead to win-win situiation for client and company.",
+            "startDate": "Aug 2015",
+            "endDate": "Aug 2017",
+            "company": "Avinashi Ventures Pvt Ltd"
+        }
+    ]
+}

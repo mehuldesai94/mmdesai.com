@@ -5,6 +5,7 @@ import Home from './components/home';
 import Footer from './components/footer';
 import Contact from './components/contact';
 import About from './components/about';
+import Resume from './components/resume';
 
 class App extends React.Component {
   state = {}
@@ -12,8 +13,9 @@ class App extends React.Component {
   render() { 
     return (
        <>
-        <Header />
-        <Home />
+        <Header/>
+        <Home/>
+        <Resume/>
         <About/>
         <Contact />
         <Footer/>

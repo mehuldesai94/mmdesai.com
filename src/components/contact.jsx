@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import Header from './header';
 import devData from '../devDetails.json';
-import CustomizedSnackbars from './errorMessage';
+// import CustomizedSnackbars from './errorMessage';
 
 // https://blog.mailtrap.io/react-contact-form/
 // https://material-ui.com/components/snackbars/
+// vercel.com mail/send
 
 
 export default class Contact extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -22,17 +26,12 @@ export default class Contact extends Component {
             senderName: '',
             senderEmail: '',
             senderPhone: '',
-            senderMessage: '',
-            badData: false
+            senderMessage: ''
+            // badData: false
         }
     }
 
-    validateFormDetails = data => {
-        console.log("here", data);
-        if (data.name === ""){
-            this.setState({ badData: true });
-        }
-    }
+
 
     handleSubmit(event) {
         event.preventDefault();
@@ -43,10 +42,53 @@ export default class Contact extends Component {
             message: this.state.senderMessage
         }
 
-        this.validateFormDetails(senderData);
+        if (this.validateFormDetails(senderData)) {
+            axios({
+                method: "POST",
+                baseURL: 'https://mmd-dbconnector.herokuapp.com/',
+                url: "mail/send",
+                data: senderData
+            }).then((response) => {
+                if (response.status === 200) {
+                    alert("Message Sent.");
+                    this.resetForm()
+                } else {
+                    alert("Unable to send.")
+                }
+            });
+        }
     }
 
-    onFormDataChange(event) {
+    validateFormDetails = data => {
+        // console.log("here", data);
+        // if (data.name === ""){
+        //     this.setState({ badData: true });
+        // }
+        if (data.name === "") {
+            alert("Please, insert valid name!");
+            return false;
+        }
+        else if (data.phone === "") {
+            alert("Please, insert call back number!");
+            return false;
+        }
+        else if (data.message === "") {
+            alert("Please, insert valid reason to connect!");
+            return false;
+        }
+        return true;
+    }
+
+    resetForm = () => {
+        this.setState({
+            senderName: '',
+            senderEmail: '',
+            senderPhone: '',
+            senderMessage: ''
+        })
+    }
+
+    onFormDataChange = event => {
         const textid = event.target.id;
         if (textid === "senderName") {
             this.setState({
@@ -73,6 +115,7 @@ export default class Contact extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <section class="site-section" id="section-contact">
                     <div class="container">
                         <div class="row">
@@ -117,7 +160,7 @@ export default class Contact extends Component {
                                             onChange={this.onFormDataChange.bind(this)}
                                             value={this.state.senderMessage} ></textarea>
                                     </div>
-                                        
+
                                     <div class="form-group">
                                         <input type="submit" class="btn btn-primary  px-4 py-3" value="Send Message" />
                                     </div>
@@ -146,34 +189,8 @@ export default class Contact extends Component {
                         </div>
                     </div>
                 </section>
-                {(this.state.badData) ? <CustomizedSnackbars /> : null}
+                {/* {(this.state.badData) ? <CustomizedSnackbars /> : null} */}
             </div>
         );
     }
 }
-
-
-// function Alert(props) {
-//   return <MuiAlert elevation={6} variant="filled" {...props} />;
-// }
-
-// const CustomizedSnackbars = () => {
-//     const handleClose = (event, reason) => {
-//       console.log("clicked");
-//     if (reason === 'clickaway') {
-//       return;
-//     }
-//   };
-
-
-//   return (
-//     <div>
-//         <Snackbar open={true} autoHideDuration={500} onClose={handleClose}>
-//           <Alert onClose={handleClose} severity="success">
-//             This is a success message!
-//           </Alert>
-//         </Snackbar>
-//         {console.log('display')}
-//       </div>
-//   );
-// }
