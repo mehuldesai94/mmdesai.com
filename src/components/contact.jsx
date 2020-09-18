@@ -45,7 +45,7 @@ export default class Contact extends Component {
         if (this.validateFormDetails(senderData)) {
             axios({
                 method: "POST",
-                baseURL: 'https://mmdesai.vercel.app/',
+                baseURL: 'https://mmd-db-connector.vercel.app/',
                 url: "mail/send",
                 data: senderData
             }).then((response) => {
