@@ -9,6 +9,7 @@
     "province": "ON",
     "country": "CA",
     "postalcode": "M3j 1K6",
+    
     "instaLink": "https://www.instagram.com/",
     "instaUserName": "mmdesai94",
     "instaQuery": "?__a=1",
@@ -16,6 +17,11 @@
     "twitterLink": "https://twitter.com/desaimehul94",
     "linkedInLink": "https://www.linkedin.com/in/mehuldesai94/",
     "githubLink": "https://github.com/mehuldesai94",
+    
+    "gitHubLink": "https://api.github.com/users/", 
+    "gitHubUsername": "mehuldesai94",
+    "gitHubQuerry": "/repos?sort=updated&direction=desc",
+    
     "education": [
         {
             "key": 1,

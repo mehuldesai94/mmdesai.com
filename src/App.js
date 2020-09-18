@@ -6,6 +6,7 @@ import Footer from './components/footer';
 import Contact from './components/contact';
 import About from './components/about';
 import Resume from './components/resume';
+import Portfolio from './components/portfolio';
 
 class App extends React.Component {
   state = {}
@@ -15,6 +16,7 @@ class App extends React.Component {
        <>
         <Header/>
         <Home/>
+        <Portfolio/>
         <Resume/>
         <About/>
         <Contact />

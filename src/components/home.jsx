@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import devDetail from '../devDetails.json';
+import img from '../IMG_0394.JPG'
+import Header from './header';
 
 
 export default class Home extends Component {
@@ -26,16 +28,15 @@ export default class Home extends Component {
                 })
             }).catch(err => {
                 console.log(err)
-            }).finally(err => {
-                console.log(err)
             })
     }
 
     render() {
         return (
             <div>
-                <section class="site-hero" style={{ backgroundImage: `url(${this.state.profile})`}} id="section-home" data-stellar-background-ratio="0.5">
-                {/* <section class="site-hero" style="background-image: url(https://drive.google.com/file/d/1EDc-1UvUYKJF_0uuFLg7-091qlJcDopv/view?usp=sharing)" id="section-home" data-stellar-background-ratio="0.5"> */}
+              
+                {/* <section class="site-hero" style={{ backgroundImage: `url(${this.state.profile})`}} id="section-home" data-stellar-background-ratio="0.5"> */}
+                <section class="site-hero" style={{backgroundImage: `url(${img})`}} id="section-home" data-stellar-background-ratio="0.5">
                     <div class="container">
                         <div class="row intro-text align-items-center justify-content-center">
                             <div class="col-md-10 text-center pt-5">
