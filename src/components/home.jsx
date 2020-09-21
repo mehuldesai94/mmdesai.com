@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import devDetail from '../devDetails.json';
-import img from '../IMG_0394.JPG'
-import Header from './header';
-
+import img from '../IMG_0394.JPG';
 
 export default class Home extends Component {
 
