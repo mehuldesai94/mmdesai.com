@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import devDetail from '../devDetails.json';
 import Header from './header';
-import img from '../IMG_0394.JPG'
+import img from '../images/background.JPG'
 
 export default class About extends Component {
 

@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
+import reactImg from '../images/react.png'
 
 export default class PortfolioCard extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props)
+        this.state = {
+            project: this.props.value
+        }
     }
 
     render() {
@@ -12,7 +16,7 @@ export default class PortfolioCard extends Component {
                 <div class="relative">
                     <div class="thumb">
                         <div class="overlay overlay-bg"></div>
-                        <img class="image img-fluid" src="images/p1.jpg" alt="" />
+                        <img class="image img-fluid" src={reactImg} width='100%' height='100%' alt="" />
                     </div>
                     <a href="images/p1.jpg" class="img-pop-up">
                         <div class="middle">
@@ -21,7 +25,7 @@ export default class PortfolioCard extends Component {
                     </a>
                 </div>
                 <div class="p-inner">
-                    <h4>Square Box Mockup</h4>
+                    <h4>{this.state.project.name}</h4>
                     <div class="cat">Mockup</div>
                 </div>
             </div>
