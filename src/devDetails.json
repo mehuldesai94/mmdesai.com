@@ -73,5 +73,16 @@
             "endDate": "Aug 2017",
             "company": "Avinashi Ventures Pvt Ltd"
         }
-    ]
+    ],
+
+    "react": 1,
+    "node" :2,
+    "java" : 3,
+    "basic" : 4,
+    "all" : 5,
+    "reactStr" : "React",
+    "nodeStr" : "Node",
+    "javaStr" : "Java",
+    "basicStr" : "HTML",
+    "allStr" : "All"
 }

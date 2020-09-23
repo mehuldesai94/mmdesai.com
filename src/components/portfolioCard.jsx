@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import reactImg from '../images/react.png'
 
 export default class PortfolioCard extends Component {
 
@@ -13,20 +12,17 @@ export default class PortfolioCard extends Component {
     render() {
         return (
             <div class="single-portfolio col-sm-4 all mockup">
-                <div class="relative">
-                    <div class="thumb">
-                        <div class="overlay overlay-bg"></div>
-                        <img class="image img-fluid" src={reactImg} width='100%' height='100%' alt="" />
-                    </div>
-                    <a href="images/p1.jpg" class="img-pop-up">
-                        <div class="middle">
-                            <div class="text align-self-center d-flex"><img src="images/preview.png" alt="" /></div>
+                <a href={(this.state.project.homepage != "") ? this.state.project.homepage : this.state.project.html_url} target="_blank" >
+                    <div class="relative">
+                        <div class="thumb">
+                            <div class="overlay overlay-bg"></div>
+                            <img class="image img-fluid" src={this.state.project.homeImg} alt="" />
                         </div>
-                    </a>
-                </div>
+                    </div>
+                </a>
                 <div class="p-inner">
                     <h4>{this.state.project.name}</h4>
-                    <div class="cat">Mockup</div>
+                    <div class="cat">{(this.state.project.homepage != "") ? "PREVIEW" : "GITHUB"}</div>
                 </div>
             </div>
         );
