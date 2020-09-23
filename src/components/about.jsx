@@ -39,7 +39,7 @@ export default class About extends Component {
                         <div class="row mb-5 align-items-center">
                             <div class="col-lg-7 pr-lg-5 mb-5 mb-lg-0">
                                 {/* <img src={this.state.profile} alt="image" class="img-fluid" width="80%" height="80%" /> */}
-                                <img src={img} alt="image" class="img-fluid"/>
+                                <img src={img} alt="" class="img-fluid"/>
                             </div>
                             <div class="col-lg-5 pl-lg-5">
                                 <div class="section-heading">

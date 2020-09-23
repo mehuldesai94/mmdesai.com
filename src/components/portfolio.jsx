@@ -52,6 +52,7 @@ export default class Portfolio extends Component {
                 res.data.map(gitRepo => {
                     if (gitProject.includes(gitRepo.id))
                         filteredProjects.push(gitRepo);
+                    return filteredProjects;    
                 })
 
                 //insert languages and home pic to object array
@@ -96,6 +97,7 @@ export default class Portfolio extends Component {
                         pro['homeImg'] = nodeImg;
                         pro['codeOn'] = devData.node
                     }
+                    return pro;    
                 })
 
                 this.setState({
@@ -128,6 +130,8 @@ export default class Portfolio extends Component {
                 filterData.push(gitRepo);
             else if (gitRepo['codeOn'] === codeOn)
                 filterData.push(gitRepo);
+            
+            return filterData;    
         })
         return filterData;
     }

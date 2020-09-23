@@ -12,7 +12,7 @@ export default class PortfolioCard extends Component {
     render() {
         return (
             <div class="single-portfolio col-sm-4 all mockup">
-                <a href={(this.state.project.homepage != "") ? this.state.project.homepage : this.state.project.html_url} target="_blank" >
+                <a href={(this.state.project.homepage !== "") ? this.state.project.homepage : this.state.project.html_url} target="_blank" rel="noopener noreferrer">
                     <div class="relative">
                         <div class="thumb">
                             <div class="overlay overlay-bg"></div>
@@ -22,7 +22,7 @@ export default class PortfolioCard extends Component {
                 </a>
                 <div class="p-inner">
                     <h4>{this.state.project.name}</h4>
-                    <div class="cat">{(this.state.project.homepage != "") ? "PREVIEW" : "GITHUB"}</div>
+                    <div class="cat">{(this.state.project.homepage !== "") ? "PREVIEW" : "GITHUB"}</div>
                 </div>
             </div>
         );
