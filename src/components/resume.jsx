@@ -39,7 +39,7 @@ export default class Resume extends Component {
                             <div class="col-md-6">
                                 <h2 class="mb-5">Experience</h2>
                                 {this.state.experience.map(exp => {
-                                    return <div class="resume-item mb-4">
+                                    return <div class="resume-item mb-4" key={exp.key}>
                                         <span class="date"><span class="icon-calendar"></span> {exp.startDate} - {exp.endDate}</span>
                                         <h3>{exp.position}</h3>
                                         <p>{exp.description}</p>
