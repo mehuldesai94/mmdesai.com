@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import devDetail from '../devDetails.json';
 import img from '../images/background.JPG'
+import Header from './header';
 
 export default class Home extends Component {
 
@@ -32,7 +33,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-              
+                
                 {/* <section class="site-hero" style={{ backgroundImage: `url(${this.state.profile})`}} id="section-home" data-stellar-background-ratio="0.5"> */}
                 <section class="site-hero" style={{backgroundImage: `url(${img})`}} id="section-home" data-stellar-background-ratio="0.5">
                     <div class="container">

@@ -11,19 +11,19 @@ import Portfolio from './components/portfolio';
 class App extends React.Component {
   state = {}
 
-  render() { 
+  render() {
     return (
-       <>
-        <Header/>
-        <Home/>
-        <Portfolio/>
-        <Resume/>
-        <About/>
+      <>
+        <Header />
+        <Home />
+        <Portfolio />
+        <Resume />
+        <About />
         <Contact />
-        <Footer/>
+        <Footer />
       </>
     );
   }
 }
- 
+
 export default App;

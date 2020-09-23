@@ -6,6 +6,7 @@ import reactImg from "../images/react.png"
 import nodeImg from "../images/node.jpeg"
 import javaImg from "../images/java.jpg"
 import basicImg from "../images/html.png"
+import Header from './header';
 
 
 
@@ -140,6 +141,7 @@ export default class Portfolio extends Component {
 
     render() {
         return (
+            <>
             <section class="site-section" id="section-portfolio">
                 <div class="container">
                     <div class="row">
@@ -167,7 +169,7 @@ export default class Portfolio extends Component {
                     </div>
                 </div>
             </section>
-
+            </>
         );
     }
 
