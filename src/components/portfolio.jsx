@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import PortfolioCard from './portfolioCard';
 import devData from '../devDetails.json';
-import reactImg from "../images/react.png"
-import nodeImg from "../images/node.jpeg"
 import javaImg from "../images/java.jpg"
-import basicImg from "../images/html.png"
-import Header from './header';
-
+import comView from '../images/company-details-overview.JPG'
+import dbConnector from '../images/dbConnector.JPG'
+import ticTac from '../images/ticTac.JPG'
+import strangerChat from '../images/strangerChat.JPG'
+import umsApp from '../images/umsApp.JPG'
+import singlePage from '../images/singlePage.JPG'
+import companyProject from '../images/company-projects.JPG'
 
 
 // Id              projects
@@ -58,32 +60,32 @@ export default class Portfolio extends Component {
 
                 //insert languages and home pic to object array
                 filteredProjects.map(pro => {
-                    if (pro['id'] === 297478570) {
+                    if (pro['id'] === 297478570) { //single page
                         pro['codeOn'] = devData.basic;
-                        pro['homeImg'] = basicImg;
+                        pro['homeImg'] = singlePage;
                     }
                     else if (pro['id'] === 188854406) {
-                        pro['homeImg'] = reactImg;
+                        pro['homeImg'] = companyProject;
                         pro['codeOn'] = devData.react
                     }
                     else if (pro['id'] === 175237813) {
                         pro['homeImg'] = javaImg;
                         pro['codeOn'] = devData.java
                     }
-                    else if (pro['id'] === 210914073) {
-                        pro['homeImg'] = nodeImg;
+                    else if (pro['id'] === 210914073) { //Strainger chat
+                        pro['homeImg'] = strangerChat;
                         pro['codeOn'] = devData.node
                     }
-                    else if (pro['id'] === 282307238) {
-                        pro['homeImg'] = nodeImg;
+                    else if (pro['id'] === 282307238) { //mongo DB connector
+                        pro['homeImg'] = dbConnector;
                         pro['codeOn'] = devData.node
                     }
-                    else if (pro['id'] === 286887227) {
-                        pro['homeImg'] = reactImg;
+                    else if (pro['id'] === 286887227) { //umsApp
+                        pro['homeImg'] = umsApp;
                         pro['codeOn'] = devData.react
                     }
-                    else if (pro['id'] === 276729463) {
-                        pro['homeImg'] = reactImg;
+                    else if (pro['id'] === 276729463) { //ticTac game
+                        pro['homeImg'] = ticTac;
                         pro['codeOn'] = devData.react
                     }
                     else if (pro['id'] === 196019289) {
@@ -94,8 +96,8 @@ export default class Portfolio extends Component {
                         pro['homeImg'] = javaImg;
                         pro['codeOn'] = devData.java
                     }
-                    else if (pro['id'] === 298090992) {
-                        pro['homeImg'] = nodeImg;
+                    else if (pro['id'] === 298090992) { //company Details Overview
+                        pro['homeImg'] = comView;
                         pro['codeOn'] = devData.node
                     }
                     return pro;    

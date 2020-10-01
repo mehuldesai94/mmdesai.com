@@ -12,17 +12,22 @@ export default class PortfolioCard extends Component {
     render() {
         return (
             <div class="single-portfolio col-sm-4 all mockup">
-                <a href={(this.state.project.homepage !== "") ? this.state.project.homepage : this.state.project.html_url} target="_blank" rel="noopener noreferrer">
-                    <div class="relative">
+
+                <div class="relative">
+                    <a href={this.state.project.homeImg} class="img-pop-up">
                         <div class="thumb">
                             <div class="overlay overlay-bg"></div>
-                            <img class="image img-fluid" src={this.state.project.homeImg} alt="" />
+                            <img class="image img-fluid" src={this.state.project.homeImg} style={{ height: '200px' }} alt="" />
                         </div>
-                    </div>
-                </a>
+                    </a>
+
+
+                </div>
                 <div class="p-inner">
                     <h4>{this.state.project.name}</h4>
-                    <div class="cat">{(this.state.project.homepage !== "") ? "PREVIEW" : "GITHUB"}</div>
+                    <a href={(this.state.project.homepage !== "") ? this.state.project.homepage : this.state.project.html_url} target="_blank" rel="noopener noreferrer">
+                        <div class="cat">{(this.state.project.homepage !== "") ? "PREVIEW" : "GITHUB"}</div>
+                    </a>
                 </div>
             </div>
         );

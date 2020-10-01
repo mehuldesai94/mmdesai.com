@@ -33,9 +33,9 @@ export default class Footer extends Component {
                                 <p>
                                     <a href={this.state.linkedInLink} class="social-item" target="_blank" rel = "noopener noreferrer"><span class="icon-linkedin2"></span></a>
                                     <a href={this.state.githubLink} class="social-item" target="_blank" rel = "noopener noreferrer"><span class="icon-github2"></span></a>
-                                    <a href={this.state.facebooklink} class="social-item" target="_blank" rel = "noopener noreferrer"><span class="icon-facebook2"></span></a>
+                                    {/* <a href={this.state.facebooklink} class="social-item" target="_blank" rel = "noopener noreferrer"><span class="icon-facebook2"></span></a>
                                     <a href={this.state.twitterLink} class="social-item" target="_blank" rel = "noopener noreferrer"><span class="icon-twitter"></span></a>
-                                    <a href={this.state.instaLink} class="social-item" target="_blank" rel = "noopener noreferrer"><span class="icon-instagram2"></span></a>
+                                    <a href={this.state.instaLink} class="social-item" target="_blank" rel = "noopener noreferrer"><span class="icon-instagram2"></span></a> */}
                                 </p>
                             </div>
                         </div>

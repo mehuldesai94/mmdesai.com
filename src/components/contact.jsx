@@ -7,6 +7,7 @@ import devData from '../devDetails.json';
 // https://blog.mailtrap.io/react-contact-form/
 // https://material-ui.com/components/snackbars/
 // vercel.com mail/send
+//drb vesu master dbmlt, gobiology
 
 
 export default class Contact extends Component {
@@ -182,7 +183,8 @@ export default class Contact extends Component {
                                         <span class="text-uppercase">Address</span>
                                         {this.state.city}, {this.state.country} <br />
                                         {this.state.street1}  <br />
-                                        {this.state.street2}, {this.state.postalcode}
+                                        {this.state.postalcode}
+                                        {/* {this.state.street2}, {this.state.postalcode} */}
                                     </li>
                                 </ul>
                             </div>
