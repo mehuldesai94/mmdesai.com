@@ -8,8 +8,7 @@
     "city": "Toronto",
     "province": "ON",
     "country": "CA",
-    "postalcode": "M3j 1K6",
-    
+    "postalcode": "M3J 1K6",
     "instaLink": "https://www.instagram.com/",
     "instaUserName": "mmdesai94",
     "instaQuery": "?__a=1",
@@ -17,15 +16,13 @@
     "twitterLink": "https://twitter.com/desaimehul94",
     "linkedInLink": "https://www.linkedin.com/in/mehuldesai94/",
     "githubLink": "https://github.com/mehuldesai94",
-    
-    "gitHubLink": "https://api.github.com/users/", 
+    "gitHubLink": "https://api.github.com/users/",
     "gitHubUsername": "mehuldesai94",
     "gitHubQuerry": "/repos?sort=updated&direction=desc",
-    
     "education": [
         {
             "key": 1,
-            "program": "Diploma in Computer Programmer",
+            "program": "Diploma (Computer Programmer)",
             "description": "This program prepares me with the skills and knowledge to begin my career as a programmer",
             "college": "Seneca College",
             "startDate": "Sep 2017",
@@ -33,7 +30,7 @@
         },
         {
             "key": 2,
-            "program": "Bachelor in Information Technology Engineering",
+            "program": "Bachelor of Engineering (Information Technology) ",
             "description": "IT is the most captivating sector of the modern world. Engineering with IT gives career in Programming, Software Project Development, Computer Networks, Information and Network Security, many other fields.",
             "college": "Birla Vishwakarma Mahavidhyalaya",
             "startDate": "Jul 2011",
@@ -74,15 +71,24 @@
             "company": "Avinashi Ventures Pvt Ltd"
         }
     ],
-
     "react": 1,
-    "node" :2,
-    "java" : 3,
-    "basic" : 4,
-    "all" : 5,
-    "reactStr" : "React",
-    "nodeStr" : "Node",
-    "javaStr" : "Java",
-    "basicStr" : "HTML",
-    "allStr" : "All"
+    "node": 2,
+    "java": 3,
+    "basic": 4,
+    "all": 5,
+    "reactStr": "React",
+    "nodeStr": "Node",
+    "javaStr": "Java",
+    "basicStr": "HTML",
+    "allStr": "All",
+    "aboutMe": [
+        {
+            "key": 1,
+            "paragraph1" : "Highly skilled and motivated software developer. I have keen interest in front-end and back-end technologies. During my academic and professional experience."
+        },
+        {
+            "key": 2,
+            "paragraph2" : "I have developed various projects using leading software development tools and technologies. Please find the link to my GitHub profile for more information."
+        }
+    ]
 }
