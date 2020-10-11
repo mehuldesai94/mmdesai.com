@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import devDetail from '../devDetails.json';
-import bgimg from '../images/img3.jpg'
+import bgimg from '../images/webImg.jpg'
 
 let imageSize = {
     
