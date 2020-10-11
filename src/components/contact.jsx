@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Alert from '@material-ui/lab/Alert';
 import axios from 'axios';
 import Header from './header';
 import devData from '../devDetails.json';
@@ -9,6 +10,7 @@ import devData from '../devDetails.json';
 // vercel.com mail/send
 //drb vesu master dbmlt, gobiology
 
+const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
 
 export default class Contact extends Component {
 
@@ -27,8 +29,11 @@ export default class Contact extends Component {
             senderName: '',
             senderEmail: '',
             senderPhone: '',
-            senderMessage: ''
-            // badData: false
+            senderMessage: '',
+            //validation object
+            isInvalidData: false,
+            invalidField: '',
+            errorMessage: ''
         }
     }
 
@@ -36,14 +41,16 @@ export default class Contact extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        const senderData = {
-            name: this.state.senderName,
-            phone: this.state.senderPhone,
-            email: this.state.senderEmail,
-            message: this.state.senderMessage
-        }
+       
+        if (this.validateFormDetails()) {
+            
+            const senderData = {
+                name: this.state.senderName,
+                phone: this.state.senderPhone,
+                email: this.state.senderEmail,
+                message: this.state.senderMessage
+            }
 
-        if (this.validateFormDetails(senderData)) {
             axios({
                 method: "POST",
                 baseURL: 'https://mmd-db-connector.vercel.app/',
@@ -60,21 +67,51 @@ export default class Contact extends Component {
         }
     }
 
-    validateFormDetails = data => {
-        // console.log("here", data);
-        // if (data.name === ""){
-        //     this.setState({ badData: true });
-        // }
+    validateFormDetails = () => {
+       
+        this.setState({
+            isInvalidData: false,
+            invalidField: '',
+            errorMessage: ''
+        })
+        
+        const data = {
+            name: this.state.senderName,
+            phone: this.state.senderPhone,
+            email: this.state.senderEmail,
+            message: this.state.senderMessage
+        }
+
         if (data.name === "") {
-            alert("Please, insert valid name!");
+            this.setState({
+                isInvalidData: true,
+                invalidField: 'senderName',
+                errorMessage: 'Please, Enter Valid Name!'
+            })
             return false;
         }
-        else if (data.phone === "") {
-            alert("Please, insert call back number!");
+        else if (data.email === "" || !validEmailRegex.test(data.email)) {
+            this.setState({
+                isInvalidData: true,
+                invalidField: 'senderEmail',
+                errorMessage: 'Please, Enter valid email!'
+            })
             return false;
         }
+        // else if (data.phone === "") {
+        //     this.setState({
+        //         isInvalidData: true,
+        //         invalidField: 'senderPhone',
+        //         errorMessage: 'Please, Enter valid call back number!'
+        //     })
+        //     return false;
+        // }
         else if (data.message === "") {
-            alert("Please, insert valid reason to connect!");
+            this.setState({
+                isInvalidData: true,
+                invalidField: 'senderMessage',
+                errorMessage: 'Please, enter valid reason to connect!'
+            })
             return false;
         }
         return true;
@@ -85,7 +122,10 @@ export default class Contact extends Component {
             senderName: '',
             senderEmail: '',
             senderPhone: '',
-            senderMessage: ''
+            senderMessage: '',
+            isInvalidData: false,
+            invalidField: '',
+            errorMessage: ''
         })
     }
 
@@ -135,15 +175,19 @@ export default class Contact extends Component {
                                         <input id="senderName" type="text"
                                             class="form-control px-3 py-4" placeholder="Your Name"
                                             onChange={this.onFormDataChange.bind(this)}
-                                            value={this.state.senderName} />
+                                            value={this.state.senderName}
+                                            onBlur={this.validateFormDetails} />
+                                        <span style={{ color: 'red' }}>{(this.state.isInvalidData && this.state.invalidField === 'senderName') ? this.state.errorMessage : ''} </span>
                                     </div>
 
                                     {/* sender email */}
                                     <div class="form-group">
-                                        <input id="senderEmail" type="email"
+                                        <input id="senderEmail" type="text"
                                             class="form-control px-3 py-4" placeholder="Your Email"
                                             onChange={this.onFormDataChange.bind(this)}
-                                            value={this.state.senderEmail} />
+                                            value={this.state.senderEmail}
+                                            onBlur={this.validateFormDetails} />
+                                        <span style={{ color: 'red' }}>{(this.state.isInvalidData && this.state.invalidField === 'senderEmail') ? this.state.errorMessage : ''} </span>
                                     </div>
 
                                     {/* sender phone */}
@@ -151,7 +195,9 @@ export default class Contact extends Component {
                                         <input id="senderPhone" type="phone"
                                             class="form-control px-3 py-4" placeholder="Your Phone"
                                             onChange={this.onFormDataChange.bind(this)}
-                                            value={this.state.senderPhone} />
+                                            value={this.state.senderPhone}
+                                            onBlur={this.validateFormDetails} />
+                                        <span style={{ color: 'red' }}>{(this.state.isInvalidData && this.state.invalidField === 'senderPhone') ? this.state.errorMessage : ''} </span>
                                     </div>
 
                                     {/* sender message */}
@@ -159,7 +205,9 @@ export default class Contact extends Component {
                                         <textarea id="senderMessage" class="form-control px-3 py-4"
                                             cols="30" rows="10" placeholder="Write a Message"
                                             onChange={this.onFormDataChange.bind(this)}
-                                            value={this.state.senderMessage} ></textarea>
+                                            value={this.state.senderMessage} 
+                                            onBlur={this.validateFormDetails}></textarea>
+                                        <span style={{ color: 'red' }}>{(this.state.isInvalidData && this.state.invalidField === 'senderMessage') ? this.state.errorMessage : ''} </span>
                                     </div>
 
                                     <div class="form-group">
@@ -189,6 +237,7 @@ export default class Contact extends Component {
                                 </ul>
                             </div>
                         </div>
+
                     </div>
                 </section>
                 {/* {(this.state.badData) ? <CustomizedSnackbars /> : null} */}
