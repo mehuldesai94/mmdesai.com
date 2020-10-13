@@ -108,7 +108,7 @@ a {
     -ms-transform: translateY(0%);
     transform: translateY(0%); }
     .site-navbar.scrolled.bg-light {
-      background: #fff !important; }
+      background: rgb(34, 34, 34) !important; }
     .site-navbar.scrolled .navbar-brand {
       display: inline-block;
       font-size: 18px;
@@ -133,7 +133,7 @@ a {
     .site-navbar.scrolled .dropdown > a:before {
       color: rgba(0, 0, 0, 0.4); }
     .site-navbar.scrolled .navbar-nav > li > a {
-      color: rgba(0, 0, 0, 0.7) !important; }
+      color: rgba(255, 255, 255, 0.7) !important; }
       .site-navbar.scrolled .navbar-nav > li > a:hover {
         color: #bac964 !important; }
       .site-navbar.scrolled .navbar-nav > li > a.active {
