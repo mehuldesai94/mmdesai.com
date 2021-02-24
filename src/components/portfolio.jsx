@@ -40,10 +40,10 @@ export default class Portfolio extends Component {
     getGitRepositories = e => {
 
         const gitProject = [
-            297478570, 188854406, 175237813, 298090992,
+            297478570, 175237813, 298090992,
             210914073, 282307238, 286887227,
             276729463, 196019289, 196013842
-        ]
+        ] //188854406
 
         axios.get(devData.gitHubLink + devData.gitHubUsername + devData.gitHubQuerry)
             .then(res => {
@@ -64,10 +64,10 @@ export default class Portfolio extends Component {
                         pro['codeOn'] = devData.basic;
                         pro['homeImg'] = singlePage;
                     }
-                    // else if (pro['id'] === 188854406) {
-                    //     pro['homeImg'] = companyProject;
-                    //     pro['codeOn'] = devData.react
-                    // }
+                    else if (pro['id'] === 188854406) {
+                        pro['homeImg'] = companyProject;
+                        pro['codeOn'] = devData.react
+                    }
                     else if (pro['id'] === 175237813) {
                         pro['homeImg'] = javaImg;
                         pro['codeOn'] = devData.java
