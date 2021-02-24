@@ -64,10 +64,10 @@ export default class Portfolio extends Component {
                         pro['codeOn'] = devData.basic;
                         pro['homeImg'] = singlePage;
                     }
-                    else if (pro['id'] === 188854406) {
-                        pro['homeImg'] = companyProject;
-                        pro['codeOn'] = devData.react
-                    }
+                    // else if (pro['id'] === 188854406) {
+                    //     pro['homeImg'] = companyProject;
+                    //     pro['codeOn'] = devData.react
+                    // }
                     else if (pro['id'] === 175237813) {
                         pro['homeImg'] = javaImg;
                         pro['codeOn'] = devData.java
