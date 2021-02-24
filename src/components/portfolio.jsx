@@ -40,10 +40,10 @@ export default class Portfolio extends Component {
     getGitRepositories = e => {
 
         const gitProject = [
-            297478570, 175237813, 298090992,
+            297478570, 188854406, 175237813,
             210914073, 282307238, 286887227,
             276729463, 196019289, 196013842
-        ] //188854406
+        ] //298090992
 
         axios.get(devData.gitHubLink + devData.gitHubUsername + devData.gitHubQuerry)
             .then(res => {
